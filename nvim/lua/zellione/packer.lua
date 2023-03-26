@@ -13,15 +13,6 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use {
-      'jghauser/fold-cycle.nvim',
-      config = function()
-          require('fold-cycle').setup()
-      end
-  }
-
-  use 'voldikss/vim-floaterm'
-
   use({
 	  'rose-pine/neovim',
 	  as = 'rose-pine',
