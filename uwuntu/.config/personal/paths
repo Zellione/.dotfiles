@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+addToPath /home/zellione/personal/lua-language-server/bin/Linux

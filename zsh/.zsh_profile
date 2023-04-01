@@ -1,1 +1,11 @@
-bindkey -s ^f "tmux-sessionizer\n" 
+VIM="nvim"
+
+bindkey -s ^f "tmux-sessionizer\n"
+
+PERSONAL=$XDG_CONFIG_HOME/personal
+source $PERSONAL/env
+for i in `find -L $PERSONAL`; do
+    source $i
+done
+
+addToPathFront $HOME/.local/scripts
