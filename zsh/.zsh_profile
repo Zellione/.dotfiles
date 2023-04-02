@@ -9,3 +9,4 @@ for i in `find -L $PERSONAL`; do
 done
 
 addToPathFront $HOME/.local/scripts
+addToPathFront $HOME/.local/bin
