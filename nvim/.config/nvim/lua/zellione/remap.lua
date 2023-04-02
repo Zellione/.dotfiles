@@ -11,13 +11,6 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
-vim.keymap.set("n", "<leader>vwm", function()
-    require("vim-with-me").StartVimWithMe()
-end)
-vim.keymap.set("n", "<leader>svwm", function()
-    require("vim-with-me").StopVimWithMe()
-end)
-
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
@@ -40,9 +33,9 @@ vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
---vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
-vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
+vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/zellione/packer.lua<CR>");
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
 vim.keymap.set("n", "<leader><leader>", function()
@@ -50,28 +43,8 @@ vim.keymap.set("n", "<leader><leader>", function()
 end)
 
 
-
-
-
-
--- Fold Cycle
-vim.keymap.set('n', '<tab>', function()
-    return require('fold-cycle').open()
-end, { silent = true, desc = 'Fold-cycle: open folds' })
-vim.keymap.set('n', '<s-tab>', function()
-    return require('fold-cycle').close()
-end, { silent = true, desc = 'Fold-cycle: close folds' })
-vim.keymap.set('n', 'zC', function()
-    return require('fold-cycle').close_all()
-end, { remap = true, silent = true, desc = 'Fold-cycle: close all folds' })
-
-
 -- CMake
 vim.keymap.set("", "<leader>cg", ":CMakeGenerate<cr>")
 vim.keymap.set("", "<leader>cb", ":CMakeBuild<cr>")
 vim.keymap.set("", "<leader>cq", ":CMakeClose<cr>")
 vim.keymap.set("", "<leader>cc", ":CMakeClean<cr>")
-
--- Floatterm
-vim.cmd[[let g:floaterm_keymap_toggle = '<leader>x']]
-vim.cmd[[let g:floaterm_wintype = 'split']]
