@@ -1,0 +1,43 @@
+#
+# /home/zellione/.nvidia-settings-rc
+#
+# Configuration file for nvidia-settings - the NVIDIA Settings utility
+# Generated on Thu Apr  6 22:55:48 2023
+#
+
+# ConfigProperties:
+
+RcFileLocale = C
+DisplayStatusBar = Yes
+SliderTextEntries = Yes
+IncludeDisplayNameInConfigFile = No
+ShowQuitDialog = Yes
+UpdateRulesOnProfileNameChange = Yes
+Timer = Memory_Used_(GPU_0),Yes,3000
+Timer = Thermal_Monitor_(GPU_0),Yes,1000
+Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
+
+# Attributes:
+
+[DPY:DP-1-0.1]/RedBrightness=0.000000
+[DPY:DP-1-0.1]/GreenBrightness=0.000000
+[DPY:DP-1-0.1]/BlueBrightness=0.000000
+[DPY:DP-1-0.1]/RedContrast=0.000000
+[DPY:DP-1-0.1]/GreenContrast=0.000000
+[DPY:DP-1-0.1]/BlueContrast=0.000000
+[DPY:DP-1-0.1]/RedGamma=1.000000
+[DPY:DP-1-0.1]/GreenGamma=1.000000
+[DPY:DP-1-0.1]/BlueGamma=1.000000
+[DPY:DP-1-0.1]/Dithering=0
+[DPY:DP-1-0.1]/DitheringMode=0
+[DPY:DP-1-0.1]/DitheringDepth=0
+[DPY:DP-1-0.1]/DigitalVibrance=0
+[DPY:DP-1-0.1]/ColorSpace=0
+[DPY:DP-1-0.1]/ColorRange=0
+[DPY:DP-1-0.1]/SynchronousPaletteUpdates=0
+[DPY:DP-1-0.2]/Dithering=0
+[DPY:DP-1-0.2]/DitheringMode=0
+[DPY:DP-1-0.2]/DitheringDepth=0
+[DPY:DP-1-0.2]/ColorSpace=0
+[DPY:DP-1-0.2]/ColorRange=0
+[DPY:DP-1-0.2]/SynchronousPaletteUpdates=0
