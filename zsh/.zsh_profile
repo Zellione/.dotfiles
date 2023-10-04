@@ -3,6 +3,7 @@ VIM="nvim"
 PERSONAL=$XDG_CONFIG_HOME/personal
 
 bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s ^b "change_background\n"
 
 source $PERSONAL/env
 for i in `find -L $PERSONAL`; do

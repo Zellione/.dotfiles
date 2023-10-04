@@ -14,6 +14,8 @@ addToPathFront() {
     fi
 }
 
-# change_background() {
-#     dconf write /org/mate/desktop/background/picture-filename "'$HOME/anime/$(ls ~/anime | fzf)'"
-# }
+change_background() {
+    WALLP=$(ls ~/Pictures/wallpapers | fzf)
+    dconf write /org/gnome/desktop/background/picture-uri-dark "'file:///$HOME/Pictures/wallpapers/$WALLP'"
+    dconf write /org/gnome/desktop/background/picture-uri-dark "'file:///$HOME/Pictures/wallpapers/$WALLP'"
+}
