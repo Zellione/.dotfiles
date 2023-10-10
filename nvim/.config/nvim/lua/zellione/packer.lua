@@ -37,6 +37,8 @@ return require('packer').startup(function(use)
   use 'gerazov/toggle-bool.nvim'
 
   use 'cdelledonne/vim-cmake'
+  use 'mfussenegger/nvim-dap'
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 
   use {
   'VonHeikemen/lsp-zero.nvim',
