@@ -13,6 +13,14 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
+  use {
+      'nvim-telescope/telescope-dap.nvim',
+      requires = {
+          {'nvim-telescope/telescope.nvim'},
+          {'mfussenegger/nvim-dap'}
+      }
+  }
+
   use({
 	  'rose-pine/neovim',
 	  as = 'rose-pine',
@@ -39,7 +47,7 @@ return require('packer').startup(function(use)
   use 'cdelledonne/vim-cmake'
   use 'mfussenegger/nvim-dap'
   use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
-
+  use { 'ldelossa/nvim-dap-projects' }
   use {
   'VonHeikemen/lsp-zero.nvim',
   branch = 'v1.x',
