@@ -115,3 +115,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 alias luamake=/home/zellione/personal/sumneko/3rd/luamake/luamake
+
+export PATH="$HOME/.symfony5/bin:$PATH"
