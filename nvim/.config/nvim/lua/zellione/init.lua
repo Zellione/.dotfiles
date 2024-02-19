@@ -1,6 +1,5 @@
-require("zellione.remap")
 require("zellione.set")
-
+require("zellione.remap")
 require("zellione.lazy_init")
 
 
@@ -31,7 +30,7 @@ autocmd('TextYankPost', {
     end,
 })
 
-autocmd({"BufWritePre"}, {
+autocmd({ "BufWritePre" }, {
     group = ZellioneGroup,
     pattern = "*",
     command = [[%s/\s\+$//e]],
