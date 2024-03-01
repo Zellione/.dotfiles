@@ -4,3 +4,5 @@ addToPathFront /home/zellione/n/bin
 addToPath /home/zellione/personal/lua-language-server/bin/Linux
 addToPath $HOME/.yarn/bin
 addToPath $HOME/.npm/bin
+addToPath $HOME/.cargo/bin
+addToPath $HOME/.rustup
