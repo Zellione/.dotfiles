@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+if [[ -z $STOW_FOLDERS ]]; then
+    STOW_FOLDERS="bin,nvim,tmux,zsh,uwuntu,tree-sitter,alacritty"
+fi
+
+if [[ -z $DOTFILES ]]; then
+    DOTFILES=$HOME/.dotfiles
+fi
+
+echo $STOW_FOLDERS
+STOW_FOLDERS=$STOW_FOLDERS DOTFILES=$DOTFILES $DOTFILES/install
