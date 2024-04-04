@@ -4,9 +4,12 @@ return {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "whoIsSethDaniel/mason-tool-installer.nvim",
+        "nvim-java/nvim-java",
         { "j-hui/fidget.nvim", opts = {} },
     },
     config = function()
+        require("java").setup()
+
         vim.api.nvim_create_autocmd("LspAttach", {
             group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
             callback = function(event)
