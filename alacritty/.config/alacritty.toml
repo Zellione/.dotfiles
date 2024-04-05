@@ -1,0 +1,7 @@
+[font]
+size = 15.0
+normal = {family = "0xProto Nerd Font Mono", style = "Regular"}
+
+[window]
+decorations = "Full"
+opacity = 0.96

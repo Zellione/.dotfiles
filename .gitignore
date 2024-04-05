@@ -1,1 +1,6 @@
 Session.vim
+!/bin/
+/bin/*
+!/bin/.local/
+/bin/.local/*
+!/bin/.local/scripts/
