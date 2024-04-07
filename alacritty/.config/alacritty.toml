@@ -3,5 +3,9 @@ size = 15.0
 normal = {family = "0xProto Nerd Font Mono", style = "Regular"}
 
 [window]
-decorations = "Full"
+decorations = "None"
 opacity = 0.96
+
+[env]
+TERM = "xterm-256color"
+# TERM = "alacritty"
