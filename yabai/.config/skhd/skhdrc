@@ -61,3 +61,6 @@ ctrl + alt - 7 : yabai -m window --space 7;
 ctrl + alt - q : brew services stop yabai
 ctrl + alt - s : brew services start yabai
 ctrl + alt - r : brew services restart yabai
+
+# open terminal window
+shift + alt - return : Alacritty
