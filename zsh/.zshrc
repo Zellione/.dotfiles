@@ -107,7 +107,6 @@ source $ZSH/oh-my-zsh.sh
 #
 source ~/.zsh_profile
 
-
 alias ll="ls -ltra"
 alias gd="git diff"
 alias gcmsg="git commit -m"

@@ -28,3 +28,4 @@ fi
 addToPathFront $HOME/.local/scripts
 addToPathFront $HOME/.local/bin
 addToPathFront /opt/homebrew/bin/brew
+addToPathFront /home/zellione/go/bin
