@@ -15,7 +15,11 @@ return {
                 'rust',
                 'javascript',
                 'typescript',
-                'jsdoc'
+                'jsdoc',
+                'go',
+                'gomod',
+                'gosum',
+                'gotmpl',
             },
             auto_install = true,
             highlight = {
