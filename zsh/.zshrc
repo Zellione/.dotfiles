@@ -112,7 +112,8 @@ alias gd="git diff"
 alias gcmsg="git commit -m"
 alias gitc="git checkout"
 alias gitm="git checkout master"
-
+alias ghce="gh copilot explain"
+alias ghcs="gh copilot suggest"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
