@@ -7,16 +7,15 @@ fi
 
 export ZSH="$HOME/.oh-my-zsh"
 
-<<<<<<< HEAD
-ZSH_THEME="agnoster"
+# ZSH_THEME="agnoster"
 
-plugins=( 
+plugins=(
     git
     archlinux
     zsh-autosuggestions
     zsh-syntax-highlighting
 )
-=======
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -84,21 +83,16 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
->>>>>>> master
 
 source $ZSH/oh-my-zsh.sh
 
 # Check archlinux plugin commands here
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/archlinux
 
-<<<<<<< HEAD
-
 # Display Pokemon-colorscripts
 # Project page: https://gitlab.com/phoneybadger/pokemon-colorscripts#on-other-distros-and-macos
 pokemon-colorscripts --no-title -s -r
 
-=======
 alias ll="ls -ltra"
 alias gd="git diff"
 alias gcmsg="git commit -m"
@@ -106,7 +100,6 @@ alias gitc="git checkout"
 alias gitm="git checkout master"
 alias ghce="gh copilot explain"
 alias ghcs="gh copilot suggest"
->>>>>>> master
 
 ### From this line is for pywal-colors
 # Import colorscheme from 'wal' asynchronously
@@ -121,8 +114,6 @@ alias ghcs="gh copilot suggest"
 # To add support for TTYs this line can be optionally added.
 #source ~/.cache/wal/colors-tty.sh
 
-<<<<<<< HEAD
-=======
 export PATH="$HOME/.symfony5/bin:$PATH"
 
 # Generated for envman. Do not edit.
@@ -130,4 +121,3 @@ export PATH="$HOME/.symfony5/bin:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
->>>>>>> master
