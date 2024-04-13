@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-export STOW_FOLDERS="bin,nvim,tmux,archi,personal,zsh"
+export STOW_FOLDERS="bin,nvim,tmux,archi,alacritty,tree-sitter,kitty,personal,zsh"
 
 addToPath() {
     if [[ "$PATH" != *"$1"* ]]; then
