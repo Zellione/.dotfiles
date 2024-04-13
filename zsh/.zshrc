@@ -93,6 +93,8 @@ source $ZSH/oh-my-zsh.sh
 # Project page: https://gitlab.com/phoneybadger/pokemon-colorscripts#on-other-distros-and-macos
 pokemon-colorscripts --no-title -s -r
 
+source ~/.zsh_profile
+
 alias ll="ls -ltra"
 alias gd="git diff"
 alias gcmsg="git commit -m"
@@ -115,6 +117,12 @@ alias ghcs="gh copilot suggest"
 #source ~/.cache/wal/colors-tty.sh
 
 export PATH="$HOME/.symfony5/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+alias luamake=/home/zellione/personal/sumneko/3rd/luamake/luamake
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
