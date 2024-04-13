@@ -16,5 +16,7 @@ return {
 			separator = nil,
 			zindex = 20, -- The Z-index of the context window
 		})
+
+        vim.api.nvim_set_hl(0, "TreesitterContextBottom", { underline = false, sp = "Grey" })
 	end,
 }
