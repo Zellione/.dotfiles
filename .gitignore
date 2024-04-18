@@ -4,3 +4,4 @@ Session.vim
 !/bin/.local/
 /bin/.local/*
 !/bin/.local/scripts/
+/hypr/.config/rofi/.current_wallpaper
