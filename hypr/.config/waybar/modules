@@ -300,13 +300,13 @@
     //"numlock": true,
     "capslock": true,
     "format": {
-      "numlock": "N {icon}",
-    "capslock":"󰪛 {icon}",
-        },
+        "numlock": "N {icon}",
+        "capslock":"󰪛 {icon}",
+    },
     "format-icons": {
-      "locked": "",
-      "unlocked": ""
-              },
+        "locked": "",
+        "unlocked": ""
+    },
 },
 
 "memory": {
@@ -466,7 +466,7 @@
 "custom/keybinds": {
     "format":"󰺁 HINT!",
     "exec": "echo ; echo  Key Hints SUPER H",
-    "on-click": "~/.config/hypr/scripts/KeyHints.sh",
+    "on-click": "~/.config/hypr/scripts/key_hints.sh",
     "interval" : 86400, // once every day
     "tooltip": true,
 },
@@ -493,7 +493,7 @@
     "exec": "echo ; echo 󰷛  screen lock",
     "interval" : 86400, // once every day
     "tooltip": true,
-    "on-click": "~/.config/hypr/scripts/LockScreen.sh",
+    "on-click": "~/.config/hypr/scripts/lock_screen.sh",
 },
 
 "custom/menu": {
@@ -502,8 +502,7 @@
     "interval" : 86400, // once every day
     "tooltip": true,
     "on-click": "pkill rofi || rofi -show drun -modi run,drun,filebrowser,window",
-    "on-click-middle": "~/.config/hypr/scripts/WallpaperSelect.sh",
-    "on-click-right": "~/.config/hypr/scripts/WaybarLayout.sh",
+    "on-click-right": "~/.config/hypr/scripts/wallpaper_select.sh",
 },
 
 // This is a custom cava visualizer
