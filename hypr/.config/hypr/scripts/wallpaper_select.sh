@@ -30,7 +30,7 @@ menu() {
   for i in "${!PICS[@]}"; do
     # Displaying .gif to indicate animated images
     if [[ -z $(echo "${PICS[$i]}" | grep .gif$) ]]; then
-      printf "$(echo "${PICS[$i]}" | cut -d. -f1)\x00icon\x1f${wallDIR}/${PICS[$i]}\n"
+      printf "$(echo "${PICS[$i]}")\x00icon\x1f${wallDIR}/${PICS[$i]}\n"
     else
       printf "${PICS[$i]}\n"
     fi
@@ -59,6 +59,7 @@ main() {
   pic_index=-1
   for i in "${!PICS[@]}"; do
     filename=$(basename "${PICS[$i]}")
+    # filename=${PICS[$i]}
     if [[ "$filename" == "$choice"* ]]; then
       pic_index=$i
       break
