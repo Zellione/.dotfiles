@@ -6,3 +6,4 @@ Session.vim
 !/bin/.local/scripts/
 /hypr/.config/rofi/.current_wallpaper
 /hypr/.config/hypr/.initial_startup_done
+/nvim/.config/nvim/lazy-lock.json
