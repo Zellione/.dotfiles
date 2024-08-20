@@ -11,9 +11,10 @@ export ZSH="$HOME/.oh-my-zsh"
 
 plugins=(
     git
-    archlinux
+    # archlinux
     zsh-autosuggestions
     zsh-syntax-highlighting
+    zsh-npm-scripts-autocomplete
 )
 
 # Set name of the theme to load --- if set to "random", it will
@@ -130,3 +131,7 @@ alias luamake=/home/zellione/personal/sumneko/3rd/luamake/luamake
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)

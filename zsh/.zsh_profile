@@ -25,6 +25,11 @@ if [ -d /usr/local/Cellar/fzf/0.49.0/shell ]; then
     source /usr/local/Cellar/fzf/0.49.0/shell/completion.zsh
 fi
 
+if [ -d /Users/sna06/homebrew/Cellar/fzf/0.54.0/shell ]; then
+    source /Users/sna06/homebrew/Cellar/fzf/0.54.0/shell/key-bindings.zsh
+    source /Users/sna06/homebrew/Cellar/fzf/0.54.0/shell/completion.zsh
+fi
+
 addToPathFront $HOME/.local/scripts
 addToPathFront $HOME/.local/bin
 addToPathFront /opt/homebrew/bin/brew
