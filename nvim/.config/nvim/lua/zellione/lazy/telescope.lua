@@ -25,6 +25,7 @@ return {
 			defaults = {
 				-- `hidden = true` is not supported in text grep commands.
 				vimgrep_arguments = vimgrep_arguments,
+                path_display = "truncate"
 			},
 			pickers = {
 				find_files = {

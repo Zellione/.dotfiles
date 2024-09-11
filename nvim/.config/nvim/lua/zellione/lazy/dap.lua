@@ -30,45 +30,13 @@ return {
 			name = "lldb",
 		}
 
-		-- dap.adapters.chrome = {
-		-- 	type = "executable",
-		-- 	command = "node",
-		-- 	args = {
-		-- 		os.getenv("HOME") .. "/.local/share/nvim/lsp-debuggers/vscode-chrome-debug/out/src/chromeDebug.js",
-		-- 	},
-		-- }
-
-		-- dap.adapters["pwa-node"] = {
-		-- 	type = "executable",
-		-- 	executable = {
-		-- 		command = "node-debug2-adapter",
-		-- 	},
-		-- }
-
-		-- dap.adapters["pwa-node"] = {
-		-- 	type = "server",
-		-- 	host = "::1",
-		-- 	port = "${port}",
-		-- 	executable = {
-		-- 		command = "node",
-		-- 		args = {
-		-- 			os.getenv("HOME") .. "/.local/share/nvim/lsp-debuggers/js-debug/src/dapDebugServer.js",
-		-- 			"${port}",
-		-- 		},
-		-- 	},
-		-- }
-
-		-- dap.adapters["pwa-node"] = {
-		-- 	type = "server",
-		-- 	host = "::1",
-		-- 	port = "${port}",
-		-- 	executable = {
-		-- 		command = "js-debug-adapter",
-		-- 		args = {
-		-- 			"${port}",
-		-- 		},
-		-- 	},
-		-- }
+		dap.adapters.chrome = {
+			type = "executable",
+			command = "node",
+			args = {
+				os.getenv("HOME") .. "/.local/share/nvim/lsp-debuggers/vscode-chrome-debug/out/src/chromeDebug.js",
+			},
+		}
 
 		dap.configurations.typescript = {
 			{
@@ -111,22 +79,50 @@ return {
 				-- trace = true,
 				skipFiles = { "<node_internals>/**", "node_modules/**" },
 			},
+			-- {
+			-- 	name = "Debug (Launch) DeichShaper",
+			-- 	type = "pwa-chrome",
+			-- 	request = "launch",
+			-- 	url = "http://localhost:4715",
+			-- 	sourceMaps = true,
+			-- 	webRoot = "${workspaceFolder}/apps/deich-shaper/src",
+			-- },
 			{
-				name = "Debug (Attach) Remote",
+				name = "Debug (Attach) DeichShaper",
 				type = "chrome",
 				request = "attach",
+				program = "${file}",
+				cwd = "${workspaceFolder}",
 				sourceMaps = true,
-				trace = true,
-				port = 9001,
-				webRoot = "${workspaceFolder}/app/charybdis",
+				protocol = "inspector",
+				port = 9222,
+				webRoot = "${workspaceFolder}",
 			},
 			{
-				type = "pwa-node",
-				request = "attach",
-				name = "Attach",
-				processId = require("dap.utils").pick_process,
-				cwd = "${workspaceFolder}",
+				type = "chrome",
+				request = "launch",
+				name = "Debug (Launch) DeichShaper (?)",
+				url = "http://localhost:4715",
+				protocol = "inspector",
+				webRoot = "${workspaceFolder}",
+				userDataDir = "${workspaceFolder}/.vscode/vscode-chrome-debug-userdatadir",
 			},
+			{
+				type = "pwa-chrome",
+				request = "launch",
+				name = "Debug (Launch) DeichShaper (SLOW)",
+				url = "http://localhost:4715",
+				webRoot = "${workspaceFolder}",
+				protocol = "inspector",
+				userDataDir = "${workspaceFolder}/.vscode/vscode-chrome-debug-userdatadir",
+			},
+			-- {
+			-- 	type = "pwa-node",
+			-- 	request = "attach",
+			-- 	name = "Attach",
+			-- 	processId = require("dap.utils").pick_process,
+			-- 	cwd = "${workspaceFolder}",
+			-- },
 		}
 
 		dap.configurations.cpp = {
@@ -171,6 +167,8 @@ return {
 
 		-- use same configuration for javascript
 		dap.configurations.javascript = dap.configurations.typescript
+		dap.configurations.typescriptreact = dap.configurations.typescript
+		dap.configurations.javascriptreact = dap.configurations.typescript
 
 		local dapui = require("dapui")
 		dap.listeners.after.event_initialized["dapui_config"] = function()
@@ -184,13 +182,16 @@ return {
 		end
 
 		vim.fn.sign_define("DapBreakpoint", { text = "🟥", texthl = "", linehl = "", numhl = "" })
-		vim.fn.sign_define("DapStopped", { text = "▶️", texthl = "", linehl = "", numhl = "" })
+		vim.fn.sign_define("DapStopped", { text = "->", texthl = "", linehl = "", numhl = "" })
 
 		vim.keymap.set("n", "<F5>", require("dap").continue)
-		vim.keymap.set("n", "<F7>", require("dap").step_over)
-		vim.keymap.set("n", "<F8>", require("dap").step_into)
-		vim.keymap.set("n", "<F9>", require("dap").step_out)
-		vim.keymap.set("n", "<F10>", function()
+		vim.keymap.set("n", "<F6>", require("dap").step_over)
+		vim.keymap.set("n", "<F7>", require("dap").step_into)
+		vim.keymap.set("n", "<F8>", require("dap").step_out)
+		vim.keymap.set("n", "<F1>", function()
+			dapui.open()
+		end)
+		vim.keymap.set("n", "<F2>", function()
 			dapui.close()
 		end)
 		vim.keymap.set("n", "<leader>b", require("dap").toggle_breakpoint)
