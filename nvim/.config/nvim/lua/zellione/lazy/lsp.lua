@@ -113,7 +113,7 @@ return {
             "codelldb",
             "stylua",
             "rust_analyzer",
-            "tsserver",
+            "ts_ls",
             "eslint",
             "clangd",
             "jedi_language_server",
