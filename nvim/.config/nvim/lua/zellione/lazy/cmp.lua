@@ -79,7 +79,7 @@ return {
 			}),
 			sources = {
 				{ name = "nvim_lsp" },
-				{ name = "luansip" },
+				{ name = "luasnip" },
 				{ name = "path" },
 				{ name = "buffer" },
 			},
