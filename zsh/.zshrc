@@ -11,7 +11,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 plugins=(
     git
-    # archlinux
+    archlinux
     zsh-autosuggestions
     zsh-syntax-highlighting
     zsh-npm-scripts-autocomplete
@@ -100,10 +100,10 @@ source ~/.zsh_profile
 alias ll="ls -ltra"
 alias gd="git diff"
 alias gcmsg="git commit -m"
-alias gitc="git checkout"
-alias gitm="git checkout master"
-alias ghce="gh copilot explain"
-alias ghcs="gh copilot suggest"
+# alias gitc="git checkout"
+# alias gitm="git checkout master"
+# alias ghce="gh copilot explain"
+# alias ghcs="gh copilot suggest"
 
 ### From this line is for pywal-colors
 # Import colorscheme from 'wal' asynchronously
@@ -135,3 +135,9 @@ alias luamake=/home/zellione/personal/sumneko/3rd/luamake/luamake
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+
+# Load fzf Git completion
+source ~/tools/fzf-git.sh.git/fzf-git.sh
+
+export PATH="/home/zellione/.config/herd-lite/bin:$PATH"
+export PHP_INI_SCAN_DIR="/home/zellione/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
