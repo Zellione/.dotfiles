@@ -1,5 +1,5 @@
 return {
-	"ThePrimeagen/git-worktree.nvim",
+	"polarmutex/git-worktree.nvim",
 	dependencies = {
 		"nvim-telescope/telescope.nvim",
 	},
@@ -10,14 +10,14 @@ return {
 		vim.keymap.set(
 			"n",
 			"<leader>st",
-			"<CMD>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>",
+			":lua require('telescope').extensions.git_worktree.git_worktrees()<CR>",
 			{ desc = "Search Worktrees", silent = true }
 		)
 
 		vim.keymap.set(
 			"n",
 			"<leader>sT",
-			"<CMD>lua require('telescope').extensions.git_worktree.create_git_worktreet)<CR>",
+			":lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>",
 			{ desc = "Create Worktree", silent = true }
 		)
 	end,
