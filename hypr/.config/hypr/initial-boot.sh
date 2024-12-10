@@ -14,8 +14,6 @@ if [ ! -f ~/.config/hypr/.initial_startup_done ]; then
 	if [ -f "$wallpaper" ]; then
 		wal -i $wallpaper -s -t > /dev/null
 		swww init && $swww $wallpaper $effect
-        # TODO: Remove pywal if wallust has replaced it
-	    "$scriptsDir/pywal_swww.sh" > /dev/null 2>&1 &
         "$scriptsDir/wallust_swww.sh" > /dev/null 2>&1 &
 	fi
 

@@ -83,6 +83,6 @@ fi
 main
 
 sleep 0.5
-${SCRIPTSDIR}/pywal_swww.sh
+${SCRIPTSDIR}/wallust_swww.sh
 sleep 0.2
 ${SCRIPTSDIR}/refresh.sh

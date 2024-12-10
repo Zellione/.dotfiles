@@ -1,12 +1,13 @@
+
 /* ---- 💫 https://github.com/JaKooLit 💫 ---- */
-/* Clipboard Config - Clipboard */
+/* Main Config - emoji */
 
 @import "~/.config/rofi/master-config.rasi"
 
 /* ---- Entry ---- */
 entry {
   width: 37%;
-  placeholder: "📋 Search Clipboard **note** 👀 CTRL Del - Cliphist del or Alt Del - cliphist wipe";
+  placeholder: "💫 Search Emoji's  **note** 👀 Click or Return to choose | Ctrl V to Paste";
 }
 
 /* ---- Listview ---- */
@@ -14,4 +15,3 @@ listview {
   columns: 1;
   lines: 8;
 }
-
