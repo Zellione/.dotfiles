@@ -11,7 +11,7 @@ return {
 	config = function(_, opts)
 		require("gitsigns").setup(opts)
 
-		vim.keymap.set("n", "<leader>gb", "<CMD>Gitsigns toggle_current_line_blame<cr>")
-		vim.keymap.set("n", "<leader>gbf", "<CMD>Gitsigns blame<cr>")
+		vim.keymap.set("n", "<leader>gb", "<CMD>Gitsigns toggle_current_line_blame<cr>", {desc = "Toggle git blame"})
+		vim.keymap.set("n", "<leader>gbf", "<CMD>Gitsigns blame<cr>", {desc = "Open Git blame all line"})
 	end,
 }

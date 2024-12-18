@@ -6,6 +6,7 @@ return {
 		"whoIsSethDaniel/mason-tool-installer.nvim",
 		"nvim-java/nvim-java",
 		{ "j-hui/fidget.nvim", opts = {} },
+		"rcarriga/nvim-notify",
 		-- "ray-x/lsp_signature.nvim",
 	},
 	config = function()
