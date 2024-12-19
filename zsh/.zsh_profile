@@ -34,3 +34,6 @@ addToPathFront $HOME/.local/scripts
 addToPathFront $HOME/.local/bin
 addToPathFront /opt/homebrew/bin/brew
 addToPathFront /home/zellione/go/bin
+
+tmux=$(which tmux)
+alias tmux="$tmux -2"
