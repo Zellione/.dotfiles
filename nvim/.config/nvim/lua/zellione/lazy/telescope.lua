@@ -8,6 +8,7 @@ return {
 		{
 			"nvim-telescope/telescope-ui-select.nvim",
 		},
+		"rcarriga/nvim-notify",
 	},
 	config = function()
 		local telescopeConfig = require("telescope.config")
@@ -25,7 +26,7 @@ return {
 			defaults = {
 				-- `hidden = true` is not supported in text grep commands.
 				vimgrep_arguments = vimgrep_arguments,
-                path_display = "truncate"
+				path_display = "truncate",
 			},
 			pickers = {
 				find_files = {
@@ -42,6 +43,7 @@ return {
 
 		pcall(require("telescope").load_extension, "fzf")
 		pcall(require("telescope").load_extension, "ui-select")
+		pcall(require("telescope").load_extension, "notify")
 
 		-- See `:help telescope.builtin`
 		local builtin = require("telescope.builtin")
@@ -77,5 +79,14 @@ return {
 		vim.keymap.set("n", "<leader>sn", function()
 			builtin.find_files({ cwd = vim.fn.stdpath("config") })
 		end, { desc = "[S]earch [N]eovim files" })
+
+		-- Shortcut for searching your neovim configuration files
+		vim.keymap.set("n", "<leader>sv", function()
+			builtin.find_files({ cwd = vim.fn.stdpath("config") })
+		end, { desc = "[S]earch Neo[v]im files" })
+
+		vim.keymap.set("n", "<leader>sn", function()
+			require("telescope").extensions.notify.notify()
+		end, { desc = "[S]earch [N]otifications" })
 	end,
 }

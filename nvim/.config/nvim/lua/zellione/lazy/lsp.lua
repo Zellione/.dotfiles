@@ -7,7 +7,6 @@ return {
 		"nvim-java/nvim-java",
 		{ "j-hui/fidget.nvim", opts = {} },
 		"rcarriga/nvim-notify",
-		-- "ray-x/lsp_signature.nvim",
 	},
 	config = function()
 		require("java").setup()
