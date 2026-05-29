@@ -141,3 +141,10 @@ source ~/tools/fzf-git.sh.git/fzf-git.sh
 
 export PATH="/home/zellione/.config/herd-lite/bin:$PATH"
 export PHP_INI_SCAN_DIR="/home/zellione/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
+
+# Add local binaries to path
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.opencode/bin:$PATH"
+
+# opencode
+export PATH=/home/zellione/.opencode/bin:$PATH
