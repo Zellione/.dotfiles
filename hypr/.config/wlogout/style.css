@@ -4,6 +4,9 @@
  * Frosted-glass surface is produced by the Hyprland layer rule for wlogout
  * (see hypr/.config/hypr/window_rules.lua). The CSS here styles the
  * surface tint and the buttons.
+ *
+ * The window uses ~70% alpha so items stay legible over busy wallpapers
+ * while still letting the Hyprland blur show through.
  */
 
 @import '../../.config/waybar/wallust/colors-waybar.css';
@@ -21,32 +24,43 @@ window {
     font-size: 13pt;
     color: @foreground;
 
-    /* Translucent dark wash; blur is applied by Hyprland layer rule */
-    background-color: rgba(30, 30, 46, 0.55);
+    /* Slightly stronger dark wash — keeps items readable over bright
+       wallpapers while still letting the compositor blur show through. */
+    background-color: rgba(30, 30, 46, 0.72);
     background-image: linear-gradient(
         135deg,
-        rgba(205, 214, 244, 0.04) 0%,
+        rgba(205, 214, 244, 0.06) 0%,
         rgba(205, 214, 244, 0.00) 50%,
-        rgba(137, 180, 250, 0.04) 100%
+        rgba(137, 180, 250, 0.06) 100%
     );
 
-    border: 1px solid rgba(205, 214, 244, 0.08);
+    border: 1px solid rgba(205, 214, 244, 0.14);
     border-radius: 24px;
+
+    /* Soft drop shadow lifts the panel off the wallpaper. */
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.45),
+        0 0 0 1px rgba(0, 0, 0, 0.10);
 }
 
 /* ---- Buttons --------------------------------------------------- */
 
 button {
     background-repeat: no-repeat;
-    background-position: center 35%;
-    background-size: 32%;
-    background-color: rgba(205, 214, 244, 0.05);
-    border: 1px solid rgba(205, 214, 244, 0.08);
+    background-position: center 32%;
+    background-size: 36%;
+    background-color: rgba(205, 214, 244, 0.10);
+    border: 1px solid rgba(205, 214, 244, 0.14);
     border-radius: 22px;
     margin: 6px;
     min-width: 130px;
     min-height: 130px;
     color: @foreground;
+
+    /* Inner highlight + outer shadow give each tile depth. */
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04),
+        0 4px 14px rgba(0, 0, 0, 0.30);
 
     transition:
         background-color 0.25s ease-in-out,
@@ -57,36 +71,41 @@ button {
 }
 
 button:focus {
-    background-color: rgba(137, 180, 250, 0.18);
-    border-color: rgba(180, 188, 214, 0.35);
-    box-shadow: 0 0 0 2px rgba(137, 180, 250, 0.35);
+    background-color: rgba(137, 180, 250, 0.22);
+    border-color: rgba(180, 188, 214, 0.45);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.05),
+        0 0 0 2px rgba(137, 180, 250, 0.45),
+        0 4px 14px rgba(0, 0, 0, 0.30);
     outline: none;
 }
 
 button:hover {
-    background-color: rgba(137, 180, 250, 0.18);
-    border-color: rgba(180, 188, 214, 0.35);
+    background-color: rgba(137, 180, 250, 0.22);
+    border-color: rgba(180, 188, 214, 0.45);
     /* GTK3 CSS lacks reliable `transform`; emulate scale with a few px grow. */
     min-width: 140px;
     min-height: 140px;
     margin: 1px;
     box-shadow:
-        0 8px 30px rgba(0, 0, 0, 0.35),
-        0 0 25px rgba(175, 92, 229, 0.25);
+        inset 0 1px 0 rgba(255, 255, 255, 0.06),
+        0 10px 32px rgba(0, 0, 0, 0.40),
+        0 0 30px rgba(175, 92, 229, 0.30);
 }
 
 button:active {
-    background-color: rgba(137, 180, 250, 0.28);
-    border-color: rgba(180, 188, 214, 0.45);
+    background-color: rgba(137, 180, 250, 0.32);
+    border-color: rgba(180, 188, 214, 0.55);
 }
 
 /* Destructive actions get a warm accent on hover */
 #reboot:hover, #shutdown:hover {
-    background-color: rgba(188, 92, 105, 0.20);
-    border-color: rgba(188, 92, 105, 0.45);
+    background-color: rgba(188, 92, 105, 0.25);
+    border-color: rgba(188, 92, 105, 0.55);
     box-shadow:
-        0 8px 30px rgba(0, 0, 0, 0.35),
-        0 0 25px rgba(188, 92, 105, 0.30);
+        inset 0 1px 0 rgba(255, 255, 255, 0.06),
+        0 10px 32px rgba(0, 0, 0, 0.40),
+        0 0 30px rgba(188, 92, 105, 0.35);
 }
 
 /* ---- Label ----------------------------------------------------- */
@@ -95,10 +114,12 @@ button:active {
    Position it in the bottom band of the tile. */
 button span {
     font-size: 0.9em;
-    font-weight: 500;
+    font-weight: 600;
     color: @foreground;
     letter-spacing: 0.02em;
     margin-top: 4px;
+    /* Subtle text shadow keeps the label legible over the icon. */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
 }
 
 /* ---- Icons ----------------------------------------------------- */
