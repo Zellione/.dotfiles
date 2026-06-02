@@ -55,7 +55,7 @@ yad --width=$dynamic_width --height=$dynamic_height \
 " Shift S" "screenshot region" "(swappy)" \
 "ALT Print" "Screenshot active window" "active window only" \
 "CTRL ALT P" "power-menu" "(wlogout)" \
-"CTRL ALT L" "screen lock" "(swaylock)" \
+"CTRL ALT L" "screen lock" "(hyprlock)" \
 "CTRL ALT Del" "Hyprland Exit" "(SAVE YOUR WORK!!!)" \
 " F" "Fullscreen" "Toggles to full screen" \
 " M" "Fullscreen with Waybar" "Toggles to full screen with waybar" \

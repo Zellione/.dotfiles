@@ -131,7 +131,6 @@ tooltip {
 #custom-light_dark,
 #custom-lock,
 #custom-hint,
-#custom-hypridle,
 #custom-menu,
 #custom-power_vertical,
 #custom-power,
@@ -289,14 +288,12 @@ label:focus {
     /* background-color: #505050; */
 }
 
-#custom-hypridle,
 #idle_inhibitor {
 	color: #f9e2af;
     /*background-color: #2d3436;*/
 }
 
 /*-----Indicators----*/
-#custom-hypridle.notactive,
 #idle_inhibitor.activated {
 	color: #39FF14;
 }
