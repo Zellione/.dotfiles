@@ -1,8 +1,8 @@
 -- ============================================================
 -- Look & Feel: General, Decoration, Animations, Layout,
 --              Group, Misc, Render, Binds, Debug, XWayland
--- Source: configs/user_settings.conf
--- Colors sourced from: lua/colors.lua  (wallust-generated)
+-- Source: hyprlang → Lua migration of general/decoration/layout vars
+-- Colors sourced from: colors.lua  (wallust-generated)
 -- See: https://wiki.hypr.land/Configuring/Basics/Variables/
 -- ============================================================
 
@@ -20,13 +20,10 @@ hl.config({
         layout            = "master",
 
         col = {
-            -- 5-color rotating gradient (90° = horizontal sweep)
+            -- 2-color gradient (Lua API restricts to 2 colors)
             active_border   = {
                 colors = {
                     colors.color0,
-                    colors.color2,
-                    colors.color4,
-                    colors.color6,
                     colors.color8,
                 },
                 angle = 90,
@@ -75,11 +72,6 @@ hl.config({
     group = {
         col = {
             border_active = colors.color15,
-        },
-        groupbar = {
-            col = {
-                active = colors.color0,
-            },
         },
     },
 

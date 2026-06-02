@@ -1,6 +1,6 @@
 -- ============================================================
 -- Environment Variables
--- Source: configs/env_vars.conf
+-- Source: hyprlang → Lua migration of env vars
 -- ============================================================
 
 -- Wayland / toolkit backends
