@@ -51,7 +51,7 @@ main() {
 
   # Random choice case
   if [ "$choice" = "$RANDOM_PIC_NAME" ]; then
-    swww img "${wallDIR}/${RANDOM_PIC}" $SWWW_PARAMS
+    awww img "${wallDIR}/${RANDOM_PIC}" $SWWW_PARAMS
     exit 0
   fi
 
@@ -67,7 +67,7 @@ main() {
   done
 
   if [[ $pic_index -ne -1 ]]; then
-    swww img "${wallDIR}/${PICS[$pic_index]}" $SWWW_PARAMS
+    awww img "${wallDIR}/${PICS[$pic_index]}" $SWWW_PARAMS
   else
     echo "Image not found."
     exit 1
