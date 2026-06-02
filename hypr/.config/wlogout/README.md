@@ -19,11 +19,17 @@ wlogout/
 
 ## Visual design
 
-- **Glass surface**: a translucent dark wash (`rgba(30, 30, 46, 0.55)`) with
-  a soft diagonal gradient. The actual frosted-blur is applied by Hyprland
-  via a layer rule on the `wlogout` namespace — see
-  `hypr/.config/hypr/window_rules.lua`. CSS `backdrop-filter` is unreliable
-  in GTK3 layer-shell, so the compositor rule is what does the work.
+- **Glass surface**: a translucent dark wash (`rgba(30, 30, 46, 0.72)`) with
+  a soft diagonal gradient and a drop shadow. The actual frosted-blur is
+  applied by Hyprland via a layer rule on the `logout_dialog` namespace —
+  see `hypr/.config/hypr/window_rules.lua`. CSS `backdrop-filter` is
+  unreliable in GTK3 layer-shell, so the compositor rule is what does the
+  work.
+
+> **Note:** wlogout hardcodes its layer namespace to `logout_dialog`
+> (see `ArtsyMacaw/wlogout` `main.c`: `gtk_layer_set_namespace(win, "logout_dialog")`),
+> *not* `wlogout`. If a layer rule doesn't seem to apply, run
+> `hyprctl layers` while wlogout is open to confirm the namespace.
 - **Buttons**: rounded tiles (`22px` radius), subtle 1px border, and a
   springy hover that scales to `1.06` with a colored glow. Reboot and
   Shutdown get a warm rose-tinted hover (`@color12`) to flag them as
