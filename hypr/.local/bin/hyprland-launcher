@@ -1,0 +1,3 @@
+#!/usr/bin/env zsh
+systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP 2>/dev/null
+exec systemctl --user start --wait hyprland.service
