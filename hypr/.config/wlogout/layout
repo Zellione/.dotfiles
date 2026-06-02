@@ -18,7 +18,7 @@
 }
 {
     "label" : "logout",
-    "action" : "hyprctl kill",
+    "action" : "pkill -x Hyprland",
     "text" : "Logout",
     "keybind" : "e"
 }
