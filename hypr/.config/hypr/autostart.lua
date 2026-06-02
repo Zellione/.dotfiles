@@ -29,6 +29,9 @@ hl.on("hyprland.start", function()
     -- Clipboard manager (cliphist)
     hl.exec_cmd("wl-paste --type text  --watch cliphist store")
     hl.exec_cmd("wl-paste --type image --watch cliphist store")
+
+    -- Idle daemon (systemd-managed for auto-restart on crash)
+    hl.exec_cmd("systemctl --user enable --now hypridle.service")
 end)
 
 -- ============================================================
