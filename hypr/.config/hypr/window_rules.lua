@@ -68,8 +68,16 @@
 -- hl.window_rule({ match = { pin = true        }, opacity = "0.8 0.8" })
 
 -- ---- Layer rules -------------------------------------------
--- hl.layer_rule({ match = { namespace = "^([Rr]ofi)$" }, blur         = true })
--- hl.layer_rule({ match = { namespace = "^([Rr]ofi)$" }, ignore_alpha = 0 })
+-- Frosted glass for launcher / power menu surfaces.
+--
+-- Note: wlogout hardcodes its layer namespace to "logout_dialog"
+-- (see ArtsyMacaw/wlogout main.c: gtk_layer_set_namespace(win, "logout_dialog")),
+-- not "wlogout". If a layer rule doesn't seem to apply, run
+-- `hyprctl layers` while the surface is open to confirm the namespace.
+hl.layer_rule({ match = { namespace = "^([Rr]ofi)$"      }, blur         = true })
+hl.layer_rule({ match = { namespace = "^([Rr]ofi)$"      }, ignore_alpha = 0 })
+hl.layer_rule({ match = { namespace = "^logout_dialog$"  }, blur         = true })
+hl.layer_rule({ match = { namespace = "^logout_dialog$"  }, ignore_alpha = 0 })
 
 -- ---- Picture-in-Picture ------------------------------------
 -- NOTE: PIP window changes class/title after first launch;
