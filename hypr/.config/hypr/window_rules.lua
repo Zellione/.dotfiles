@@ -68,8 +68,11 @@
 -- hl.window_rule({ match = { pin = true        }, opacity = "0.8 0.8" })
 
 -- ---- Layer rules -------------------------------------------
--- hl.layer_rule({ match = { namespace = "^([Rr]ofi)$" }, blur         = true })
--- hl.layer_rule({ match = { namespace = "^([Rr]ofi)$" }, ignore_alpha = 0 })
+-- Frosted glass for launcher / power menu surfaces.
+hl.layer_rule({ match = { namespace = "^([Rr]ofi)$"   }, blur         = true })
+hl.layer_rule({ match = { namespace = "^([Rr]ofi)$"   }, ignore_alpha = 0 })
+hl.layer_rule({ match = { namespace = "^([Ww]logout)$" }, blur         = true })
+hl.layer_rule({ match = { namespace = "^([Ww]logout)$" }, ignore_alpha = 0 })
 
 -- ---- Picture-in-Picture ------------------------------------
 -- NOTE: PIP window changes class/title after first launch;
