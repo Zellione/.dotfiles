@@ -64,9 +64,7 @@ loginctl unlock-session 2>/dev/null
 sleep 0.5
 
 if pgrep -x Hyprland >/dev/null 2>&1; then
-    if ! hyprctl kill 2>/dev/null; then
-        pkill -TERM Hyprland 2>/dev/null
-        sleep 2
-        pkill -KILL Hyprland 2>/dev/null
-    fi
+    pkill -TERM Hyprland 2>/dev/null
+    sleep 3
+    pkill -KILL Hyprland 2>/dev/null
 fi
