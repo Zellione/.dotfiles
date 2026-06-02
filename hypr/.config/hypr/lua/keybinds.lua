@@ -78,7 +78,6 @@ hl.bind("XF86AudioMute",         hl.dsp.exec_cmd(scriptsDir .. "/volume.sh --tog
 hl.bind("XF86Sleep",             hl.dsp.exec_cmd("systemctl suspend"))
 hl.bind("XF86Rfkill",            hl.dsp.exec_cmd(scriptsDir .. "/airplane_mode.sh"))
 
-hl.bind("XF86AudioPlayPause",    hl.dsp.exec_cmd(scriptsDir .. "/media_ctrl.sh --pause"))
 hl.bind("XF86AudioPause",        hl.dsp.exec_cmd(scriptsDir .. "/media_ctrl.sh --pause"))
 hl.bind("XF86AudioPlay",         hl.dsp.exec_cmd(scriptsDir .. "/media_ctrl.sh --pause"))
 hl.bind("XF86AudioNext",         hl.dsp.exec_cmd(scriptsDir .. "/media_ctrl.sh --nxt"))
