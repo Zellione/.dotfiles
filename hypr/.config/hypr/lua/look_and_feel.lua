@@ -133,7 +133,6 @@ hl.curve("overshot", { type = "bezier", points = { {0.7,  0.6},  {0.1, 1.1}   } 
 hl.curve("bounce",   { type = "bezier", points = { {1.1,  1.6},  {0.1, 0.85}  } })
 -- Defined in old config but not actively used by any animation:
 hl.curve("sligshot", { type = "bezier", points = { {1,    -1},   {0.15, 1.25} } })
-hl.curve("nice",     { type = "bezier", points = { {0,    6.9},  {0.5, -4.20} } })
 
 -- ---- Animations ---------------------------------------------
 -- Format: hl.animation({ leaf, enabled, speed, bezier|spring, style? })
@@ -146,7 +145,7 @@ hl.animation({ leaf = "windowsIn",   enabled = true, speed = 5,   bezier = "slow
 hl.animation({ leaf = "windowsOut",  enabled = true, speed = 5,   bezier = "winOut",  style = "popin" })
 hl.animation({ leaf = "windowsMove", enabled = true, speed = 5,   bezier = "wind",    style = "slide" })
 hl.animation({ leaf = "border",      enabled = true, speed = 10,  bezier = "linear"   })
-hl.animation({ leaf = "borderangle", enabled = true, speed = 180, bezier = "linear",  style = "loop"  })
+hl.animation({ leaf = "borderangle", enabled = true, speed = 100, bezier = "linear",  style = "loop"  })
 hl.animation({ leaf = "fade",        enabled = true, speed = 5,   bezier = "overshot" })
 hl.animation({ leaf = "workspaces",  enabled = true, speed = 5,   bezier = "wind"     })
 hl.animation({ leaf = "windows",     enabled = true, speed = 5,   bezier = "bounce",  style = "popin" })
