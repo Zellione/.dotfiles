@@ -2,7 +2,7 @@
 -- Look & Feel: General, Decoration, Animations, Layout,
 --              Group, Misc, Render, Binds, Debug, XWayland
 -- Source: configs/user_settings.conf
--- Colors sourced from: lua/colors.lua  (wallust-generated)
+-- Colors sourced from: colors.lua  (wallust-generated)
 -- See: https://wiki.hypr.land/Configuring/Basics/Variables/
 -- ============================================================
 
