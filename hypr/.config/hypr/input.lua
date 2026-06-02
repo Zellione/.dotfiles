@@ -1,6 +1,6 @@
 -- ============================================================
 -- Input Configuration
--- Source: configs/user_settings.conf  (input + device blocks)
+-- Source: hyprlang → Lua migration of input/device blocks
 -- See: https://wiki.hypr.land/Configuring/Basics/Variables/
 -- ============================================================
 

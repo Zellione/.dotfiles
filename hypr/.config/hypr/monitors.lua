@@ -1,6 +1,6 @@
 -- ============================================================
 -- Monitor Configuration
--- Source: configs/monitors.conf
+-- Source: hyprlang → Lua migration of monitor config
 -- See: https://wiki.hypr.land/Configuring/Basics/Monitors/
 -- ============================================================
 -- Use `hyprctl monitors` to list connected displays.

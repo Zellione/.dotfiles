@@ -1,6 +1,6 @@
 -- ============================================================
 -- Keybindings
--- Source: configs/keybinds.conf
+-- Source: hyprlang → Lua migration of keybinds
 -- See: https://wiki.hypr.land/Configuring/Basics/Binds/
 --      https://wiki.hypr.land/Configuring/Basics/Dispatchers/
 --
@@ -33,15 +33,14 @@ hl.bind(mainMod .. " + T",       hl.dsp.exec_cmd(files))
 
 -- ---- Session / WM control -----------------------------------
 
--- NOTE: workspaceopt allfloat has no direct hl.dsp dispatcher in 0.55;
---       kept as hyprctl exec for now. Verify if dispatcher was added.
 hl.bind("CTRL + ALT + Delete",   hl.dsp.exit())
 hl.bind(mainMod .. " + Q",       hl.dsp.window.close())
 hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + F",       hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + M",       hl.dsp.window.fullscreen({ mode = "maximized" }))
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + ALT + F", hl.dsp.exec_cmd("hyprctl dispatch workspaceopt allfloat"))
+-- NOTE: workspaceopt allfloat was removed in 0.55; toggle_active window only.
+hl.bind(mainMod .. " + ALT + F", hl.dsp.window.float({ action = "toggle" }))
 hl.bind("CTRL + ALT + L",        hl.dsp.exec_cmd(scriptsDir .. "/lock_screen.sh"))
 hl.bind("CTRL + ALT + P",        hl.dsp.exec_cmd(scriptsDir .. "/wlogout.sh"))
 
@@ -140,11 +139,11 @@ for i = 1, 10 do
             hl.dsp.window.move({ workspace = i, follow = false }))
 end
 
--- Bracket navigation ([ / ])
-hl.bind(mainMod .. " + SHIFT + bracketleft",  hl.dsp.window.move({ workspace = -1, follow = true }))
-hl.bind(mainMod .. " + SHIFT + bracketright", hl.dsp.window.move({ workspace =  1, follow = true }))
-hl.bind(mainMod .. " + CTRL + bracketleft",   hl.dsp.window.move({ workspace = -1, follow = false }))
-hl.bind(mainMod .. " + CTRL + bracketright",  hl.dsp.window.move({ workspace =  1, follow = false }))
+-- Bracket navigation ([ / ]) — relative workspace move (strings required in Lua API)
+hl.bind(mainMod .. " + SHIFT + bracketleft",  hl.dsp.window.move({ workspace = "-1", follow = true }))
+hl.bind(mainMod .. " + SHIFT + bracketright", hl.dsp.window.move({ workspace = "+1", follow = true }))
+hl.bind(mainMod .. " + CTRL + bracketleft",   hl.dsp.window.move({ workspace = "-1", follow = false }))
+hl.bind(mainMod .. " + CTRL + bracketright",  hl.dsp.window.move({ workspace = "+1", follow = false }))
 
 -- ---- Special Workspace (scratchpad) ------------------------
 

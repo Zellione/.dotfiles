@@ -1,6 +1,6 @@
 -- ============================================================
 -- Autostart / Startup Applications
--- Source: configs/settings.conf + configs/startup_apps.conf
+-- Source: hyprlang → Lua migration of exec-once entries
 -- See: https://wiki.hypr.land/Configuring/Basics/Autostart/
 --
 -- hl.exec_cmd() is always asynchronous — no need for '& disown'.
@@ -11,7 +11,6 @@ local scriptsDir = home .. "/.config/hypr/scripts"
 
 hl.on("hyprland.start", function()
     -- Initial boot script: applies wallpaper, theming, new settings.
-    -- Source: configs/settings.conf  (exec-once = $HOME/.config/hypr/initial-boot.sh)
     hl.exec_cmd(home .. "/.config/hypr/initial-boot.sh")
 
     -- Wallpaper daemon

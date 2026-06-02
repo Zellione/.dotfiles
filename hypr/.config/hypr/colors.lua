@@ -12,7 +12,7 @@
 local ok, c = pcall(require, "colors_wallust")
 
 if not ok or type(c) ~= "table" then
-    -- Fallback: current palette from ~/.cache/wal/colors-hyprland
+    -- Fallback: current palette from wallust
     c = {
         background = 0xff030511,
         foreground = 0xffadbedd,

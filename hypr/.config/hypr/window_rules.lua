@@ -1,6 +1,6 @@
 -- ============================================================
 -- Window Rules
--- Source: configs/window_rules.conf  (all rules were commented out)
+-- Source: hyprlang → Lua migration of window rules (all originally commented)
 -- See: https://wiki.hypr.land/Configuring/Basics/Window-Rules/
 --
 -- Rules are evaluated top-to-bottom. Named rules run before anonymous ones.
