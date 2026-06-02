@@ -5,7 +5,7 @@ PartOf=graphical-session.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/Hyprland
+ExecStart=/usr/bin/start-hyprland
 Restart=on-failure
 RestartSec=2
 TimeoutStopSec=10
