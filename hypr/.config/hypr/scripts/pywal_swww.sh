@@ -13,13 +13,13 @@ ln_success=false
 # Get first valid monitor
 current_monitor=$(hyprctl -j monitors | jq -r '.[0].name')
 echo $current_monitor
-# Construct the full path to the cache file
-cache_file="$cache_dir$current_monitor"
+# Find cache file (awww may use versioned subdirs like 0.12.1/)
+cache_file=$(find "$cache_dir" -name "$current_monitor" -type f 2>/dev/null | head -1)
 echo $cache_file
 # Check if the cache file exists for the current monitor output
-if [ -f "$cache_file" ]; then
+if [ -n "$cache_file" ] && [ -f "$cache_file" ]; then
     # Get the wallpaper path from the cache file
-    wallpaper_path=$(cat "$cache_file")
+    wallpaper_path=$(strings "$cache_file" | tail -1)
     echo $wallpaper_path
     # Copy the wallpaper to the location Rofi can access
     if ln -sf "$wallpaper_path" "$HOME/.config/rofi/.current_wallpaper"; then
