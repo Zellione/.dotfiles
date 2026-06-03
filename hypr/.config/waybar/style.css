@@ -19,15 +19,17 @@
 @define-color color14 #7A89BD;
 @define-color color15 #B4BCD6;
 
-/* bright accents derived from wallust palette hues */
-@define-color accent-pink #f2a0b3;
-@define-color accent-green #b8e6a0;
-@define-color accent-orange #f0c49a;
-@define-color accent-purple #c9a6f7;
-@define-color accent-blue #94b8f7;
-@define-color accent-cyan #8ad4e8;
-@define-color accent-red #f09090;
-@define-color accent-yellow #f0dca0;
+/* wallust-accents-start */
+/* bright accents derived from wallust palette */
+@define-color accent-pink #eba2ba;
+@define-color accent-green #9ce2a7;
+@define-color accent-orange #eec09f;
+@define-color accent-purple #d1adea;
+@define-color accent-blue #adc6ea;
+@define-color accent-cyan #a8e0e5;
+@define-color accent-red #eba8a2;
+@define-color accent-yellow #eddcaa;
+/* wallust-accents-end */
 
 @define-color critical #ff0000;
 @define-color warning #f3f809;

@@ -34,5 +34,10 @@ if [ "$ln_success" = true ]; then
     # execute wallust
 	echo 'about to execute wallust'
     # execute wallust skipping tty and terminal changes
-    wallust run "$wallpaper_path" -s &
+    wallust run "$wallpaper_path" -s
+    wait
+
+    # regenerate waybar accent colors from new palette
+    python3 "$HOME/.config/hypr/scripts/generate_waybar_accents.py"
+    killall -SIGUSR1 waybar 2>/dev/null
 fi
