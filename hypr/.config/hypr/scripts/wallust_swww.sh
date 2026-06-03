@@ -39,5 +39,8 @@ if [ "$ln_success" = true ]; then
 
     # regenerate waybar accent colors from new palette
     python3 "$HOME/.config/hypr/scripts/generate_waybar_accents.py"
-    killall -SIGUSR1 waybar 2>/dev/null
+    # restart waybar to reload CSS (SIGUSR1 only toggles visibility)
+    killall waybar 2>/dev/null
+    sleep 0.3
+    waybar > /dev/null 2>&1 &
 fi
