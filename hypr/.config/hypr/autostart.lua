@@ -30,8 +30,8 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("wl-paste --type text  --watch cliphist store")
     hl.exec_cmd("wl-paste --type image --watch cliphist store")
 
-    -- Idle daemon
-    hl.exec_cmd("hypridle")
+    -- Idle daemon: managed by hypridle.service (systemd user unit)
+    -- hl.exec_cmd("hypridle")
 end)
 
 -- ============================================================
