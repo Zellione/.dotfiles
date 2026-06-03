@@ -1,7 +1,7 @@
  /* wallust template - colors-waybar */
 
 @define-color foreground #D0D6E8;
-@define-color background rgba(17,17,20,0.25);
+@define-color background rgba(17,17,20,0.85);
 @define-color cursor #717283;
 
 @define-color color0 #39393C;
