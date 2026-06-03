@@ -66,8 +66,7 @@ def make_accent(source_hex, target_hue, target_sat, target_light):
         diff = (target_hue - h + 180) % 360 - 180
         h = (h + diff * 0.3) % 360
 
-    return hsl_to_hex(target_hue if target_hue is not None else h,
-                      target_sat, target_light)
+    return hsl_to_hex(h, target_sat, target_light)
 
 
 def parse_colors(css_path):
