@@ -15,7 +15,7 @@ ln_success=false
 wallpaper_path=""
 
 if [ -n "$cache_file" ] && [ -f "$cache_file" ]; then
-    wallpaper_path=$(grep -v 'Lanczos3' "$cache_file" | head -n 1)
+    wallpaper_path=$(strings "$cache_file" | tail -1)
     echo "Wallpaper: $wallpaper_path"
     if ln -sf "$wallpaper_path" "$HOME/.config/rofi/.current_wallpaper"; then
         ln_success=true

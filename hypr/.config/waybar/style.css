@@ -21,14 +21,14 @@
 
 /* wallust-accents-start */
 /* bright accents derived from wallust palette */
-@define-color accent-pink #a9a2eb;
-@define-color accent-green #9ccbe2;
-@define-color accent-orange #b99fee;
-@define-color accent-purple #adbcea;
-@define-color accent-blue #adcbea;
-@define-color accent-cyan #a8d3e5;
-@define-color accent-red #b4a2eb;
-@define-color accent-yellow #aaedd2;
+@define-color accent-pink #eba2ce;
+@define-color accent-green #e2a29c;
+@define-color accent-orange #ee9fbd;
+@define-color accent-purple #eaade6;
+@define-color accent-blue #dcadea;
+@define-color accent-cyan #e5a8ca;
+@define-color accent-red #eba2c5;
+@define-color accent-yellow #edaab6;
 /* wallust-accents-end */
 
 @define-color critical #ff0000;
