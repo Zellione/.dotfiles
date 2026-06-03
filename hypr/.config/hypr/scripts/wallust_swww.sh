@@ -1,41 +1,31 @@
 #!/bin/bash
 # Wallust Colors for current wallpaper
 
-# Define the path to the swww cache directory
-cache_dir="$HOME/.cache/awww/"
-
-# Get a list of monitor outputs
-monitor_outputs=($(ls "$cache_dir"))
-
-# Initialize a flag to determine if the ln command was executed
-ln_success=false
+cache_base="$HOME/.cache/awww/"
 
 # Get current focused monitor
 current_monitor=$(hyprctl monitors | awk '/^Monitor/{name=$2} /focused: yes/{print name}')
-echo $current_monitor
-# Construct the full path to the cache file
-cache_file="$cache_dir$current_monitor"
-echo $cache_file
-# Check if the cache file exists for the current monitor output
-if [ -f "$cache_file" ]; then
-    # Get the wallpaper path from the cache file
+echo "Monitor: $current_monitor"
+
+# Find cache file (awww may use versioned subdirs like 0.12.1/)
+cache_file=$(find "$cache_base" -name "$current_monitor" -type f 2>/dev/null | head -1)
+echo "Cache: $cache_file"
+
+ln_success=false
+wallpaper_path=""
+
+if [ -n "$cache_file" ] && [ -f "$cache_file" ]; then
     wallpaper_path=$(grep -v 'Lanczos3' "$cache_file" | head -n 1)
-    echo $wallpaper_path
-    # symlink the wallpaper to the location Rofi can access
+    echo "Wallpaper: $wallpaper_path"
     if ln -sf "$wallpaper_path" "$HOME/.config/rofi/.current_wallpaper"; then
-        ln_success=true  # Set the flag to true upon successful execution
+        ln_success=true
     fi
-    # copy the wallpaper for wallpaper effects
-	cp -r "$wallpaper_path" "$HOME/.config/hypr/wallpaper_effects/.wallpaper_current"
+    cp -r "$wallpaper_path" "$HOME/.config/hypr/wallpaper_effects/.wallpaper_current" 2>/dev/null
 fi
 
-# Check the flag before executing further commands
 if [ "$ln_success" = true ]; then
-    # execute wallust
-	echo 'about to execute wallust'
-    # execute wallust skipping tty and terminal changes
+    echo 'about to execute wallust'
     wallust run "$wallpaper_path" -s
-    wait
 
     # regenerate waybar accent colors from new palette
     python3 "$HOME/.config/hypr/scripts/generate_waybar_accents.py"
