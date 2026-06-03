@@ -59,7 +59,6 @@ logger -t hyprlock-watchdog "Cleaning up and exiting Hyprland."
 notify-send -u critical "Lock Screen" "Exiting Hyprland for recovery."
 
 pkill -9 -x hyprlock 2>/dev/null
-pkill -9 -x hypridle 2>/dev/null
 loginctl unlock-session 2>/dev/null
 sleep 0.5
 
