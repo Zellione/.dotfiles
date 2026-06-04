@@ -12,12 +12,13 @@ if [ "$HYPRGAMEMODE" = "true" ] ; then
     notify-send -e -u low -i "$notif" "gamemode enabled. All animations off"
     exit
 else
+	hyprctl eval 'hl.config({ animations = { enabled = 1 }, decoration = { drop_shadow = 1, blur = { passes = 2 }, rounding = 8 }, general = { gaps_in = 4, gaps_out = 8, border_size = 2 } })'
 	swww init && swww img "$HOME/.config/rofi/.current_wallpaper"
 	sleep 0.1
 	${SCRIPTSDIR}/pywal_swww.sh
 	sleep 0.5
 	${SCRIPTSDIR}/refresh.sh
     notify-send -e -u normal -i "$notif" "gamemode disabled. All animations normal"
-    exit
+	exit
 fi
 hyprctl reload
