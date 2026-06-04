@@ -2,15 +2,11 @@
 
 @import "~/.config/rofi/master-config.rasi"
 
-/* ---- Configuration ---- */
-configuration {
-	font: "Fira Code SemiBold 12";
-}
-
 /* ---- Window ---- */
 window {
-    width:	60%;
+  width:	60%;
 }
+
 /* ---- Listview ---- */
 listview {
   columns: 6;
@@ -21,9 +17,9 @@ listview {
 /* ---- Element ---- */
 element {
   orientation: vertical;
-  padding: 12px 0px 0px 0px;
+  padding: 10px 0px 0px 0px;
   spacing: 6px;
-  border-radius: 12px;
+  border-radius: 8px;
 }
 
 element-icon {
@@ -31,7 +27,6 @@ element-icon {
 }
 
 element-text {
-  font: "Fira Code SemiBold 12";
   vertical-align: 0.5;
   horizontal-align: 0.5;
 }

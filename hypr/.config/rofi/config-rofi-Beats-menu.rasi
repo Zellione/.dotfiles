@@ -1,13 +1,11 @@
-
-/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
-/* Main config Rofi Beats Config (compact) */
+/* Rofi Beats Menu Config */
 
 @import "~/.config/rofi/master-config.rasi"
 
 /* ---- Entry ---- */
 entry {
   width: 20%;
-  placeholder: "📻 Choose Music Source";
+  placeholder: "❯ Choose Music Source";
 }
 
 /* ---- Window ---- */

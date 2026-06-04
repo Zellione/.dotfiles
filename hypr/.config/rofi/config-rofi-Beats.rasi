@@ -1,11 +1,10 @@
-/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
-/* Rofi Beats Config (compact) */
+/* Rofi Beats Config */
 
 @import "~/.config/rofi/config-compact.rasi"
 
 /* ---- Entry ---- */
 entry {
-  placeholder: "📻 Choose Media or Stations to play";
+  placeholder: "❯ Choose Media or Station";
 }
 
 /* ---- Listview ---- */

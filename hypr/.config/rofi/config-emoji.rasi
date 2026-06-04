@@ -1,13 +1,11 @@
-
-/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
-/* Main Config - emoji */
+/* Emoji Config */
 
 @import "~/.config/rofi/master-config.rasi"
 
 /* ---- Entry ---- */
 entry {
   width: 37%;
-  placeholder: "💫 Search Emoji's  **note** 👀 Click or Return to choose | Ctrl V to Paste";
+  placeholder: "❯ Search emoji — Enter to select, Ctrl V to paste";
 }
 
 /* ---- Listview ---- */
