@@ -12,4 +12,7 @@ Session.vim
 /hypr/.config/waybar/wallust/colors-waybar.css
 /hypr/.config/rofi/wallust/colors-rofi.rasi
 /hypr/.config/cava/config
+/hypr/.config/hypr/colors_wallust.lua
+/hypr/.config/qt5ct/colors/wallust.conf
+/hypr/.config/qt6ct/colors/wallust.conf
 /kitty/.config/kitty/kitty-colors.conf
