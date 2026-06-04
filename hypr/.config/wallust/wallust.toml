@@ -48,6 +48,12 @@ waybar.target = '~/.config/waybar/wallust/colors-waybar.css'
 kitty.template = 'colors-kitty.conf'
 kitty.target = '~/.config/kitty/kitty-colors.conf'
 
+qt5ct.template = 'colors-qt.conf'
+qt5ct.target = '~/.config/qt5ct/colors/wallust.conf'
+
+qt6ct.template = 'colors-qt.conf'
+qt6ct.target = '~/.config/qt6ct/colors/wallust.conf'
+
 #swaync.template = 'colors-swaync.css'
 #swaync.target = '~/.config/swaync/wallust/colors-wallust.css'
 
