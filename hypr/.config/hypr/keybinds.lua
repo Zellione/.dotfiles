@@ -85,13 +85,13 @@ hl.bind("XF86AudioStop",         hl.dsp.exec_cmd(scriptsDir .. "/media_ctrl.sh -
 
 -- ---- Screenshots -------------------------------------------
 
-hl.bind(mainMod .. " + Print",          hl.dsp.exec_cmd(scriptsDir .. "/screen_shot.sh --now"))
-hl.bind(mainMod .. " + SHIFT + Print",  hl.dsp.exec_cmd(scriptsDir .. "/screen_shot.sh --area"))
-hl.bind(mainMod .. " + CTRL + Print",   hl.dsp.exec_cmd(scriptsDir .. "/screen_shot.sh --in5"))
-hl.bind(mainMod .. " + ALT + Print",    hl.dsp.exec_cmd(scriptsDir .. "/screen_shot.sh --in10"))
-hl.bind("ALT + Print",                  hl.dsp.exec_cmd(scriptsDir .. "/screen_shot.sh --active"))
+hl.bind(mainMod .. " + Print",          hl.dsp.exec_cmd(scriptsDir .. "/screenshot.sh --now"))
+hl.bind(mainMod .. " + SHIFT + Print",  hl.dsp.exec_cmd(scriptsDir .. "/screenshot.sh --area"))
+hl.bind(mainMod .. " + CTRL + Print",   hl.dsp.exec_cmd(scriptsDir .. "/screenshot.sh --in5"))
+hl.bind(mainMod .. " + ALT + Print",    hl.dsp.exec_cmd(scriptsDir .. "/screenshot.sh --in10"))
+hl.bind("ALT + Print",                  hl.dsp.exec_cmd(scriptsDir .. "/screenshot.sh --active"))
 -- Screenshot with swappy:
-hl.bind(mainMod .. " + SHIFT + S",      hl.dsp.exec_cmd(scriptsDir .. "/screen_shot.sh --swappy"))
+hl.bind(mainMod .. " + SHIFT + S",      hl.dsp.exec_cmd(scriptsDir .. "/screenshot.sh --swappy"))
 
 -- ---- Resize Windows (binde → repeating) --------------------
 
