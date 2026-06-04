@@ -21,7 +21,7 @@ if [ "$HYPRGAMEMODE" = 1 ] ; then
 else
 	swww init && swww img "$HOME/.config/rofi/.current_wallpaper"
 	sleep 0.1
-	${SCRIPTSDIR}/pywal_swww.sh
+	${SCRIPTSDIR}/wallust_swww.sh
 	sleep 0.5
 	${SCRIPTSDIR}/refresh.sh
     notify-send -e -u normal -i "$notif" "gamemode disabled. All animations normal"
