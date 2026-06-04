@@ -20,7 +20,7 @@
 -- hl.window_rule({ match = { class = "zoom" }, float = true })
 -- hl.window_rule({ match = { class = "rofi" }, float = true })
 -- hl.window_rule({ match = { class = "gnome-system-monitor" }, float = true })
--- hl.window_rule({ match = { class = "yad"  }, float = true })
+hl.window_rule({ match = { class = "yad"  }, float = true })
 
 -- ---- Gamescope ---------------------------------------------
 -- hl.window_rule({ match = { class = "gamescope" }, no_blur   = true   })
