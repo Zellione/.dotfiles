@@ -9,7 +9,6 @@ Session.vim
 /nvim/.config/nvim/lazy-lock.json
 
 # wallust auto-generated color files (regenerated on wallpaper change)
-/hypr/.config/hypr/colors_wallust.lua
 /hypr/.config/waybar/wallust/colors-waybar.css
 /hypr/.config/rofi/wallust/colors-rofi.rasi
 /hypr/.config/cava/config
