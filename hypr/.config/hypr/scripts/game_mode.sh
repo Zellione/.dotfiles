@@ -5,16 +5,9 @@ notif="$HOME/.config/swaync/images/bell.png"
 SCRIPTSDIR="$HOME/.config/hypr/scripts"
 
 
-HYPRGAMEMODE=$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
-if [ "$HYPRGAMEMODE" = 1 ] ; then
-    hyprctl --batch "\
-        keyword animations:enabled 0;\
-        keyword decoration:drop_shadow 0;\
-        keyword decoration:blur:passes 0;\
-        keyword general:gaps_in 0;\
-        keyword general:gaps_out 0;\
-        keyword general:border_size 1;\
-        keyword decoration:rounding 0"
+HYPRGAMEMODE=$(hyprctl -j getoption animations:enabled | jq '.bool')
+if [ "$HYPRGAMEMODE" = "true" ] ; then
+    hyprctl eval 'hl.config({ animations = { enabled = 0 }, decoration = { drop_shadow = 0, blur = { passes = 0 }, rounding = 0 }, general = { gaps_in = 0, gaps_out = 0, border_size = 1 } })'
     swww kill
     notify-send -e -u low -i "$notif" "gamemode enabled. All animations off"
     exit
