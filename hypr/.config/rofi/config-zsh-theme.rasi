@@ -1,5 +1,4 @@
-/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
-/* Main Config (compact) */
+/* Main Config (zsh theme) */
 
 @import "~/.config/rofi/master-config.rasi"
 
@@ -11,7 +10,7 @@ configuration {
 /* ---- Window ---- */
 window {
   width: 40%;
-  border-radius: 15px;
+  border-radius: 12px;
 }
 
 /* ---- Imagebox ---- */
@@ -23,17 +22,17 @@ imagebox {
 
 /* ---- Listbox ---- */
 listbox {
-  border-radius: 12px;
+  border-radius: 8px;
 }
 
 /* ---- Inputbar ---- */
 inputbar {
-  padding: 14px;
-  border-radius: 10px;
+  padding: 12px;
+  border-radius: 8px;
 }
 
 entry {
-  placeholder: "󰸉  Choose ZSH theme";
+  placeholder: "❯ Choose ZSH theme";
 }
 
 /* ---- Listview ---- */
@@ -41,19 +40,19 @@ listview {
   columns: 3;
   lines: 3;
   spacing: 4px;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 /* ---- Element ---- */
 element {
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 /*****----- Message -----*****/
 message {
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 textbox {
-  padding: 15px;
+  padding: 12px;
 }
