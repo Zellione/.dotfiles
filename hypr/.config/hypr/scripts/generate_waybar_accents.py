@@ -2,8 +2,8 @@
 """Generate bright accent colors from wallust palette for waybar.
 
 Reads colors-waybar.css, extracts the 16 palette colors, converts to HSL,
-increases lightness to create readable pastel accents, and writes them into
-style.css between wallust-accents markers.
+increases lightness to create readable pastel accents, and appends them
+to the same colors-waybar.css file.
 """
 
 import colorsys
@@ -13,10 +13,9 @@ from pathlib import Path
 
 WAYBAR_DIR = Path.home() / ".config" / "waybar"
 COLORS_CSS = WAYBAR_DIR / "wallust" / "colors-waybar.css"
-STYLE_CSS = WAYBAR_DIR / "style.css"
 
-START_MARKER = "/* wallust-accents-start */"
-END_MARKER = "/* wallust-accents-end */"
+ACCENT_START = "/* wallust-accents-start */"
+ACCENT_END = "/* wallust-accents-end */"
 
 # Each accent gets: (source color index, target hue or None to use source hue,
 # target saturation, target lightness)
@@ -83,7 +82,7 @@ def parse_colors(css_path):
 
 def generate_accent_css(colors):
     """Generate CSS @define-color lines for bright accents."""
-    lines = [f"{START_MARKER}"]
+    lines = [f"{ACCENT_START}"]
     lines.append("/* bright accents derived from wallust palette */")
 
     for accent_name, (color_idx, hue, sat, light) in ACCENT_MAP.items():
@@ -92,27 +91,26 @@ def generate_accent_css(colors):
         accent_hex = make_accent(source_hex, hue, sat, light)
         lines.append(f"@define-color {accent_name} {accent_hex};")
 
-    lines.append(f"{END_MARKER}")
+    lines.append(f"{ACCENT_END}")
     return "\n".join(lines)
 
 
-def inject_accents(style_path, accent_block):
-    """Replace the accent section in style.css between markers."""
-    with open(style_path) as f:
+def update_colors_css(colors_path, accent_block):
+    """Append accent colors to colors-waybar.css, replacing any existing accent section."""
+    with open(colors_path) as f:
         content = f.read()
 
     pattern = re.compile(
-        re.escape(START_MARKER) + r".*?" + re.escape(END_MARKER),
+        re.escape(ACCENT_START) + r".*?" + re.escape(ACCENT_END),
         re.DOTALL
     )
 
     if pattern.search(content):
         new_content = pattern.sub(accent_block, content)
     else:
-        print(f"ERROR: Markers not found in {style_path}", file=sys.stderr)
-        sys.exit(1)
+        new_content = content.rstrip() + "\n\n" + accent_block + "\n"
 
-    with open(style_path, "w") as f:
+    with open(colors_path, "w") as f:
         f.write(new_content)
 
 
@@ -123,8 +121,8 @@ def main():
 
     colors = parse_colors(COLORS_CSS)
     accent_block = generate_accent_css(colors)
-    inject_accents(STYLE_CSS, accent_block)
-    print(f"Waybar accents regenerated in {STYLE_CSS}")
+    update_colors_css(COLORS_CSS, accent_block)
+    print(f"Waybar accents regenerated in {COLORS_CSS}")
 
 
 if __name__ == "__main__":
